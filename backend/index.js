@@ -29,16 +29,16 @@ app.use(express.json());
 app.use('/backend/user', userroutes);//userroutes use
 app.use('/backend/auth',authroutes);// authroutes use
 //middleware
-// app.use((err,req,res,next)=>{
-//     const statusCode =err.statusCode || 500;
-//     const message= err.message || 'internal Server Error';
-//     return res.status(statusCode).json({
-//         success: false,
-//         message,
-//         statusCode
-//     });
-//     next();
-// }); 
+app.use((err,req,res,next)=>{
+    const statusCode =err.statusCode || 500;
+    const message= err.message || 'internal Server Error';
+    return res.status(statusCode).json({
+        success: false,
+        message,
+        statusCode
+    });
+    next();
+ }); 
 
 app.listen(3000, () => {
     console.log(`Server listening on port 3000`);
