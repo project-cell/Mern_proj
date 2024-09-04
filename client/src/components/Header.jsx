@@ -8,8 +8,8 @@ export default function Header() {
             <Link to ='/'>
             <h1 className='font-bold text-zinc-950 p-2 size-17
             '> GET AUTHORIZED </h1></Link>
-            <ul className='flex gap-4 text-balance font-semibold '>
-                <Link to='/home'><li>Home</li>
+            <ul className='flex gap-4 text-clip font-semibold '>
+                <Link to='/home'><li className='font-serif '>Home</li>
                 </Link>
                 <Link to='/about'><li>About</li></Link>               
                 <Link to='/sign-in'><li>Sign-in</li></Link>               
