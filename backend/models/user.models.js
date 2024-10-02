@@ -13,6 +13,11 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    profilePicture:{
+        type:String,
+        default:"https://s3-media0.fl.yelpcdn.com/bphoto/FCb9PEzmX7BCbl49-KmyJQ/348s.jpg",
+        
     }
 
 }, {timestamps: true});

@@ -49,7 +49,7 @@ export default function SignUp() {
         <input type="email" 
         placeholder='Email'
         id='email' 
-        className='bg-slate-200 p-3 rounded-lg'
+        className='bg-slate-200 p-3 rounded-lg'    
         onChange={handleChange}/>
 
         <input type="password" 

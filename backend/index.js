@@ -4,7 +4,11 @@ const router = express.Router();
 import mongoose from 'mongoose';
 import dotenv from'dotenv';
 import userroutes from './routes/user.js';//routes
-import authroutes from './routes/auth.js';//routes
+import authroutes from './routes/auth.js';
+import cookieParser from 'cookie-parser';
+app.use (cookieParser);
+
+//import {test} from './controllers/users.controller.js';
 dotenv.config();
 
 const mongoURL= 'mongodb://localhost:27017/Projauth';
@@ -25,6 +29,9 @@ db.on("error",(error)=>{
     console.log('error in MongoDb server',error);
 })
 const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server listening on port 3000`);
+   });
 app.use(express.json());
 app.use('/backend/user', userroutes);//userroutes use
 app.use('/backend/auth',authroutes);// authroutes use
@@ -40,6 +47,6 @@ app.use((err,req,res,next)=>{
     next();
  }); 
 
-app.listen(3000, () => {
-    console.log(`Server listening on port 3000`);
-});
+// app.listen(3000, () => {
+//     console.log(`Server listening on port 3000`);
+// });
